@@ -84,6 +84,12 @@ module.exports = function(grunt) {
           src: ['dist/**.js']
         }
       }
+    },
+    'gh-pages': {
+      options: {
+        base: 'example'
+      },
+      src: '**/*'
     }
   });
 
