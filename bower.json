@@ -20,10 +20,14 @@
     "node_modules",
     "bower_components",
     "test",
+    "src",
     ".grunt",
-    "coverage"
+    "coverage",
+    "example",
+    "Gruntfile.js",
+    "karma.conf.js"
   ],
-  "dependencies": {
+  "devDependencies": {
     "angular-mocks": "~1.3.15"
   }
 }
