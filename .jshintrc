@@ -1,6 +1,6 @@
 {
   "quotmark": "single",
-  "curly": true,
+  "curly": false,
   "eqeqeq": false,
   "immed": true,
   "latedef": true,
@@ -14,6 +14,7 @@
   "node": true,
   "smarttabs": true,
   "globals": {
+    "jasmine": true,
     "jQuery": true,
     "angular": true,
     "console": true,

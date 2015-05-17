@@ -4,7 +4,7 @@ var pkg = require('./package.json');
 
 var createFolderGlobs = function (fileTypePatterns) {
   fileTypePatterns = Array.isArray(fileTypePatterns) ? fileTypePatterns : [fileTypePatterns];
-  var ignore = ['node_modules', 'bower_components', 'dist', 'temp', 'example'];
+  var ignore = ['node_modules', 'bower_components', 'dist', 'temp', 'example', 'coverage', '.grunt'];
   var fs = require('fs');
   return fs.readdirSync(process.cwd())
     .map(function (file) {

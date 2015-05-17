@@ -1,22 +1,29 @@
 {
   "name": "angular-color-this",
+  "description": "A super simple angular module for adding color to things",
+  "homepage": "http://eknowles.github.com/angular-color-this",
   "version": "1.0.0",
+  "license": "MIT",
   "authors": [
     "Edward Knowles <mail@eknowles.com>"
   ],
-  "description": "A super simple angular module for adding color to things",
-  "main": "dist/angular-color-this/angular-color-this.min.js",
+  "main": [
+    "dist/angular-color-this.js",
+    "dist/angular-color-this.min.js"
+  ],
   "keywords": [
     "angular",
     "color"
   ],
-  "license": "MIT",
-  "homepage": "http://eknowles.github.com/angular-color-this",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
-  ]
+    ".grunt",
+    "coverage"
+  ],
+  "dependencies": {
+    "angular-mocks": "~1.3.15"
+  }
 }

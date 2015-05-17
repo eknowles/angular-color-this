@@ -2,23 +2,13 @@
   "name": "angular-color-this",
   "description": "A super simple angular module for adding color to things",
   "version": "1.0.0",
-  "homepage": "http://eknowles.com",
+  "homepage": "http://eknowles.github.io/angular-color-this/",
   "author": "Edward Knowles <mail@eknowles.com>",
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+  },
   "engines": {
     "node": ">= 0.10.0"
-  },
-  "dependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-concat": "^0.4.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-nodeunit": "^0.4.1",
-    "grunt-contrib-uglify": "^0.5.1",
-    "grunt-ng-annotate": "^0.10.0",
-    "grunt-release": "^0.12.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "jshint-stylish": "^1.0.2",
-    "load-grunt-tasks": "^3.1.0",
-    "time-grunt": "^1.2.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -31,18 +21,24 @@
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-gh-pages": "^0.10.0",
+    "grunt-karma-coveralls": "^2.5.3",
     "grunt-ng-annotate": "^0.10.0",
     "grunt-release": "^0.12.0",
+    "jasmine-core": "^2.3.4",
     "jshint-stylish": "^1.0.2",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.12",
+    "karma-coveralls": "^0.1.5",
+    "karma-jasmine": "^0.3.5",
+    "karma-js-coverage": "^0.4.0",
+    "karma-phantomjs-launcher": "^0.1.4",
     "load-grunt-tasks": "^3.1.0",
+    "phantomjs": "^1.9.16",
     "time-grunt": "^1.2.0"
-  },
-  "scripts": {
-    "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "http"
+    "url": "https://github.com/eknowles/angular-color-this.git"
   },
   "keywords": [
     "angular",
