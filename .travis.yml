@@ -1,12 +1,23 @@
+sudo: false
 language: node_js
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
 node_js:
-  - 0.12
-branches:
-  only:
-    - master
+  - '4'
+before_install:
+  - npm i -g npm@^2.0.0
 before_script:
+  - npm prune
   - npm install -g bower
   - npm install phantomjs
   - npm install -g karma
   - npm install -g karma-cli
   - bower install
+after_success:
+  - npm run semantic-release
+branches:
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
