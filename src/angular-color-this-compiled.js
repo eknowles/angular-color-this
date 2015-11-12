@@ -1,7 +1,3 @@
-/*! angular-color-this - v1.0.0 - 2015-11-12
-* http://eknowles.github.io/angular-color-this/
-* Copyright (c) 2015 ; Licensed  */
-
 'use strict';
 
 angular.module('ngColorThis', []).factory('Color', function () {
@@ -57,7 +53,7 @@ angular.module('ngColorThis', []).factory('Color', function () {
     toVal: toVal,
     rgbToCSS: rgbToCSS
   };
-}).directive('colorThis', ["Color", function (Color) {
+}).directive('colorThis', function (Color) {
   return {
     restrict: 'A',
     scope: {
@@ -74,5 +70,5 @@ angular.module('ngColorThis', []).factory('Color', function () {
       }, false);
     }
   };
-}]);
+});
 //# sourceMappingURL=angular-color-this-compiled.js.map

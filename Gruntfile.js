@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+      ' Licensed <%= pkg.licenses %> */\n',
     // Task configuration.
     jshint: {
       main: {
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
     },
     ngAnnotate: {
       dist: {
-        src: 'src/<%= pkg.name %>.js',
+        src: 'src/<%= pkg.name %>-compiled.js',
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -90,10 +90,21 @@ module.exports = function(grunt) {
         base: 'example'
       },
       src: '**/*'
+    },
+    babel: {
+      options: {
+        sourceMap: true,
+        presets: ['es2015']
+      },
+      dist: {
+        files: {
+          'src/<%= pkg.name %>-compiled.js': 'src/<%= pkg.name %>.js'
+        }
+      }
     }
   });
 
   // Default task.
-  grunt.registerTask('default', ['clean:before', 'ngAnnotate', 'jshint', 'uglify', 'usebanner', 'copy']);
+  grunt.registerTask('default', ['clean:before', 'babel', 'ngAnnotate', 'jshint', 'uglify', 'usebanner', 'copy']);
 
 };

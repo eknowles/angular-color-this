@@ -1,4 +1,5 @@
 {
+  "esnext": true,
   "quotmark": "single",
   "curly": false,
   "eqeqeq": false,
