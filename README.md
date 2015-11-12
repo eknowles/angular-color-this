@@ -15,4 +15,4 @@ Source the file in your HTML
 
 Add it to your app!
 
-`angualr.module('myApp', ['ngColorThis'])`
+`angular.module('myApp', ['ngColorThis'])`
