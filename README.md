@@ -1,7 +1,5 @@
-angular-color-this
+angular-color-this [![Build Status](https://travis-ci.org/eknowles/angular-color-this.svg)](https://travis-ci.org/eknowles/angular-color-this)  [![Coverage Status](https://coveralls.io/repos/eknowles/angular-color-this/badge.svg?branch=master)](https://coveralls.io/r/eknowles/angular-color-this?branch=master)
 ===
-
-[![Build Status](https://travis-ci.org/eknowles/angular-color-this.svg)](https://travis-ci.org/eknowles/angular-color-this)  [![Coverage Status](https://coveralls.io/repos/eknowles/angular-color-this/badge.svg?branch=master)](https://coveralls.io/r/eknowles/angular-color-this?branch=master)
 
 Generate a unique color from a string. Spice up your app and add some color.
 

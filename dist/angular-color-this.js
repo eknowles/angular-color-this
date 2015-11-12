@@ -1,19 +1,24 @@
-/*! angular-color-this - v1.0.0 - 2015-05-17
+/*! angular-color-this - v1.0.0 - 2015-05-20
 * http://eknowles.github.io/angular-color-this/
 * Copyright (c) 2015 ; Licensed  */
 
 angular.module('ngColorThis', [])
   .factory('Color', function () {
-    function convert(str) {
+
+    /**
+     * Convert a string into RGB values
+     * @param {String|Number|Boolean} string - An input string
+     * @returns {Object} rgbObject - A color object
+     */
+    function convert(string, saltParam) {
       var r, g, b, rOffset, gOffset, bOffset;
-      var rgbObject;
       var output = '';
-      var salt = -5;
+      var salt = saltParam ? parseInt(saltParam) : -5;
 
-      str = str.toString();
+      string = string.toString();
 
-      for (var i = str.length - 1; i >= 0; i--) {
-        var charAt = str.charCodeAt(i).toString().split('');
+      for (var i = string.length - 1; i >= 0; i--) {
+        var charAt = string.charCodeAt(i).toString().split('');
         for (var x = charAt.length - 1; x >= 0; x--) {
           var y = charAt[x] - salt;
           if (y < 4) y = parseInt(y) + 4;
@@ -56,16 +61,19 @@ angular.module('ngColorThis', [])
     return {
       restrict: 'A',
       scope: {
-        color: '='
+        color: '=color',
+        salt: '=colorSalt'
       },
       link: function (scope, element, attrs, fn) {
+
         scope.$watch('color', function (newValue, oldValue) {
+          console.log('ping');
           if (newValue) {
             var rgb = Color.convert(newValue);
-            var css = Color.rgbToCSS(rgb.red, rgb.green, rgb.blue);
+            var css = Color.rgbToCSS(rgb.red, rgb.green, rgb.blue, 50);
             element.css(attrs.colorThis, css);
           }
-        }, true);
+        }, false);
       }
     };
   }]);

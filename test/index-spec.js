@@ -33,6 +33,11 @@ describe('ngColorThis', function () {
       expect(convertTest.blue).toBeLessThan(256);
     });
 
+    it('should return a pretty string for rgb values', function () {
+      var rgbToCSS = Color.rgbToCSS(255, 255, 255);
+      expect(rgbToCSS).toBe('rgb(255, 255, 255)');
+    });
+
   });
 
 });
