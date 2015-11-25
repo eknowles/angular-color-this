@@ -63,7 +63,9 @@ angular
           if (newValue) {
             const rgb = Color.convert(newValue);
             const css = Color.rgbToCSS(rgb.red, rgb.green, rgb.blue, 50);
-            element.css(attrs.colorThis, css);
+            attrs.colorThis.split(' ').forEach(function(selector){
+              element.css(selector, css);
+            });
           }
         }, false);
       }
