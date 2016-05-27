@@ -1,4 +1,4 @@
-/*! angular-color-this - v1.0.0 - 2015-11-12
+/*! angular-color-this - v - 2015-11-25
 * http://eknowles.github.io/angular-color-this/
 * Copyright (c) 2015 ; Licensed  */
 
@@ -44,8 +44,9 @@ angular.module('ngColorThis', []).factory('Color', function () {
 
   function toVal(a, b, c) {
     var together = parseInt(a + b + c);
-    while (together > 255) together = Math.round(together / 5);
-    return together;
+    while (together > 255) {
+      together = Math.round(together / 5);
+    }return together;
   }
 
   function rgbToCSS(red, green, blue) {
@@ -67,9 +68,13 @@ angular.module('ngColorThis', []).factory('Color', function () {
     link: function link(scope, element, attrs, fn) {
       scope.$watch('color', function (newValue, oldValue) {
         if (newValue) {
-          var rgb = Color.convert(newValue);
-          var css = Color.rgbToCSS(rgb.red, rgb.green, rgb.blue, 50);
-          element.css(attrs.colorThis, css);
+          (function () {
+            var rgb = Color.convert(newValue);
+            var css = Color.rgbToCSS(rgb.red, rgb.green, rgb.blue, 50);
+            attrs.colorThis.split(' ').forEach(function (selector) {
+              element.css(selector, css);
+            });
+          })();
         }
       }, false);
     }
