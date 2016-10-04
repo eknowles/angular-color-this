@@ -9,6 +9,10 @@ Demo: [http://eknowles.github.io/angular-color-this/](http://eknowles.github.io/
 
 `bower install angular-color-this --save`
 
+or
+
+`bower install https://github.com/eknowles/angular-color-this.git#v1.0.1 --save`
+
 Source the file in your HTML
 
 `<script src="bower_components/angular-color-this/dist/angular-color-this.min.js"></script>`
