@@ -7,7 +7,11 @@ Demo: [http://eknowles.github.io/angular-color-this/](http://eknowles.github.io/
 
 ## Installation
 
-`bower install angular-color-this --save`
+`npm install angular-color-this --save`
+
+or
+
+`bower install https://github.com/eknowles/angular-color-this.git#v1.0.1 --save`
 
 or
 
@@ -15,7 +19,7 @@ or
 
 Source the file in your HTML
 
-`<script src="bower_components/angular-color-this/dist/angular-color-this.min.js"></script>`
+`<script src="node_modules/angular-color-this/dist/angular-color-this.min.js"></script>`
 
 Add it to your app!
 
